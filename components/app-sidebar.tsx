@@ -65,6 +65,11 @@ const data = {
       url: "#",
       icon: IconUsers,
     },
+    {
+      title: "Address Book",
+      url: "/addressbook",
+      icon: IconUsers,
+    },
   ],
   navClouds: [
     {
@@ -147,6 +152,11 @@ const data = {
       url: "#",
       icon: IconFileWord,
     },
+    {
+      title: "Address Book",
+      url: "/addressbook",
+      icon: IconUsers,
+    }
   ],
 }
 

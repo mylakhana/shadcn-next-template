@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Quicksand, Beiruti } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const quicksand = Quicksand({
   subsets: ["latin"],
+  variable: "--font-quicksand",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const beiruti = Beiruti({
+  subsets: ["arabic"],
+  variable: "--font-beiruti",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={locale === 'ar' ? `${beiruti.variable} font-beiruti antialiased` : `${quicksand.variable} font-quicksand antialiased`}
       >
         <NextIntlClientProvider>
           <ThemeProvider

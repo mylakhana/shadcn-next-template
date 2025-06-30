@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useTranslations } from 'next-intl';
 
 export function LoginForm({
@@ -19,7 +20,7 @@ export function LoginForm({
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card>
+      <Card className="shadow-md">
         <CardHeader>
           <CardTitle>{t('cardTitle')}</CardTitle>
           <CardDescription>
@@ -27,45 +28,48 @@ export function LoginForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-3">
-                <Label htmlFor="email">{t('emailLabel')}</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                />
-              </div>
-              <div className="grid gap-3">
-                <div className="flex items-center">
-                  <Label htmlFor="password">{t('passwordLabel')}</Label>
-                  <a
-                    href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    {t('forgotPassword')}
-                  </a>
+          <Tabs defaultValue="email" className="w-full">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="email">{t('emailTab')}</TabsTrigger>
+              <TabsTrigger value="mobile">{t('mobileTab')}</TabsTrigger>
+            </TabsList>
+            <TabsContent value="email">
+              <form>
+                <div className="flex flex-col gap-6">
+                  <div className="grid gap-3">
+                    <Label htmlFor="email">{t('emailLabel')}</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="m@example.com"
+                      required
+                    />
+                  </div>
+                  <Button type="submit" className="w-full rounded-md">
+                    {t('loginButton')}
+                  </Button>
                 </div>
-                <Input id="password" type="password" required />
-              </div>
-              <div className="flex flex-col gap-3">
-                <Button type="submit" className="w-full">
-                  {t('loginButton')}
-                </Button>
-                <Button variant="outline" className="w-full">
-                  {t('loginWithGoogle')}
-                </Button>
-              </div>
-            </div>
-            <div className="mt-4 text-center text-sm">
-              {t('noAccount')}{" "}
-              <a href="#" className="underline underline-offset-4">
-                {t('signUp')}
-              </a>
-            </div>
-          </form>
+              </form>
+            </TabsContent>
+            <TabsContent value="mobile">
+              <form>
+                <div className="flex flex-col gap-6">
+                  <div className="grid gap-3">
+                    <Label htmlFor="mobile">{t('mobileLabel')}</Label>
+                    <Input
+                      id="mobile"
+                      type="tel"
+                      placeholder="+1234567890"
+                      required
+                    />
+                  </div>
+                  <Button type="submit" className="w-full rounded-md">
+                    {t('loginButton')}
+                  </Button>
+                </div>
+              </form>
+            </TabsContent>
+          </Tabs>
         </CardContent>
       </Card>
     </div>

@@ -6,11 +6,9 @@
     "cardTitle": "تسجيل الدخول إلى حسابك",
     "cardDescription": "أدخل بريدك الإلكتروني أدناه لتسجيل الدخول إلى حسابك",
     "emailLabel": "البريد الإلكتروني",
-    "passwordLabel": "كلمة المرور",
-    "forgotPassword": "هل نسيت كلمة المرور؟",
     "loginButton": "تسجيل الدخول",
-    "loginWithGoogle": "تسجيل الدخول باستخدام جوجل",
-    "noAccount": "ليس لديك حساب؟",
-    "signUp": "إنشاء حساب"
+    "emailTab": "البريد الإلكتروني",
+    "mobileTab": "رقم الجوال",
+    "mobileLabel": "رقم الجوال"
   }
 }
