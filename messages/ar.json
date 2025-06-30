@@ -1,0 +1,16 @@
+{
+  "HomePage": {
+    "title": "مرحبا بالعالم!"
+  },
+  "LoginPage": {
+    "cardTitle": "تسجيل الدخول إلى حسابك",
+    "cardDescription": "أدخل بريدك الإلكتروني أدناه لتسجيل الدخول إلى حسابك",
+    "emailLabel": "البريد الإلكتروني",
+    "passwordLabel": "كلمة المرور",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "loginButton": "تسجيل الدخول",
+    "loginWithGoogle": "تسجيل الدخول باستخدام جوجل",
+    "noAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب"
+  }
+}
