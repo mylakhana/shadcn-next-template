@@ -10,5 +10,13 @@
     "emailTab": "البريد الإلكتروني",
     "mobileTab": "رقم الجوال",
     "mobileLabel": "رقم الجوال"
+  },
+  "AddressBook": {
+    "title": "دفتر العناوين",
+    "noAddresses": "لم يتم العثور على عناوين.",
+    "errorLoading": "خطأ في تحميل العناوين:",
+    "addressDetails": {
+      "phone": "الهاتف:"
+    }
   }
 }

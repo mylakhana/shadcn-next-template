@@ -10,5 +10,13 @@
     "emailTab": "Email",
     "mobileTab": "Mobile Number",
     "mobileLabel": "Mobile Number"
+  },
+  "AddressBook": {
+    "title": "Address Book",
+    "noAddresses": "No addresses found.",
+    "errorLoading": "Error loading addresses:",
+    "addressDetails": {
+      "phone": "Phone:"
+    }
   }
 }

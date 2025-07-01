@@ -1,7 +1,8 @@
 import React from 'react';
 import { createClient } from '@supabase/supabase-js';
+import { getTranslations } from 'next-intl/server';
 
-// Initialize Supabase client (replace with your actual project URL and anon key)
+// Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
@@ -22,6 +23,7 @@ interface Address {
 }
 
 export default async function AddressBookPage() {
+  const t = await getTranslations('AddressBook');
   let addresses: Address[] = [];
   let error: Error | null = null;
 
@@ -37,20 +39,20 @@ export default async function AddressBookPage() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Address Book</h1>
-      {error && <p className="text-red-500">Error loading addresses: {error.message}</p>}
+      <h1 className="text-2xl font-bold mb-4">{t('title')}</h1>
+      {error && <p className="text-red-500">{t('errorLoading')} {error.message}</p>}
       {
         addresses.length === 0 && !error ? (
-          <p>No addresses found.</p>
+          <p>{t('noAddresses')}</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {addresses.map((address) => (
-              <div key={address.id} className="bg-white p-4 rounded-lg shadow-md">
+              <div key={address.id} className="bg-white p-4 rounded-md shadow-md">
                 <p className="font-semibold">{address.address_line_1}</p>
                 {address.address_line_2 && <p>{address.address_line_2}</p>}
                 <p>{address.city}, {address.state} {address.postal_code}</p>
                 <p>{address.country}</p>
-                {address.phone && <p>Phone: {address.phone}</p>}
+                {address.phone && <p>{t('addressDetails.phone')} {address.phone}</p>}
               </div>
             ))}
           </div>
